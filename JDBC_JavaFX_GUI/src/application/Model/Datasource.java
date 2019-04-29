@@ -27,7 +27,9 @@ public class Datasource {
     public static final int ORDER_BY_ASC = 2;
     public static final int ORDER_BY_DESC = 3;
 
+    // SELECT albums.name FROM albums INNER JOIN artists ON albums.artist = artists._id WHERE artists.name =
     public static final String QUERY_ALBUMS_BY_ARTIST_START = "SELECT " + TABLE_ALBUMS + '.' + COLUMN_ALBUM_NAME + " FROM " + TABLE_ALBUMS + " INNER JOIN " + TABLE_ARTISTS + " ON " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST + " = " + TABLE_ARTISTS + "." + COLUMN_ARTIST_ID + " WHERE " + TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + " = \"";
+    // ORDER BY albums.name COLLATE NOCASE
     public static final String QUERY_ALBUMS_BY_ARTIST_SORT = " ORDER BY " + TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " COLLATE NOCASE ";
 
     public static final String INSERT_ARTIST = "INSERT INTO " + TABLE_ARTISTS + '(' + COLUMN_ARTIST_NAME + ") VALUES(?)";
@@ -35,6 +37,9 @@ public class Datasource {
 
     public static final String QUERY_ARTIST = "SELECT " + COLUMN_ARTIST_ID + " FROM " + TABLE_ARTISTS + " WHERE " + COLUMN_ARTIST_NAME + " = ?";
     public static final String QUERY_ALBUM = "SELECT " + COLUMN_ALBUM_ID + " FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_ALBUM_NAME + " = ?";
+
+    // SELECT * FROM albums WHERE artist = ? ORDER BY name COLLATE NOCASE
+    public static final String QUERY_ALBUMS_BY_ARTIST_ID = "SELECT * FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_ALBUM_ARTIST + " = ? ORDER BY " + COLUMN_ALBUM_NAME + " COLLATE NOCASE";
 
     // == fields ==
 
@@ -45,6 +50,8 @@ public class Datasource {
 
     private PreparedStatement queryArtist;
     private PreparedStatement queryAlbum;
+
+    private PreparedStatement queryAlbumsByArtistID;
 
     // == private constructor ==
 
@@ -58,7 +65,6 @@ public class Datasource {
 
     }
 
-
     // == methods ==
 
     public boolean open() {
@@ -68,6 +74,7 @@ public class Datasource {
             insertIntoAlbums = conn.prepareStatement(INSERT_ALBUMS, Statement.RETURN_GENERATED_KEYS);
             queryArtist = conn.prepareStatement(QUERY_ARTIST);
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
+            queryAlbumsByArtistID = conn.prepareStatement(QUERY_ALBUMS_BY_ARTIST_ID);
 
             return true;
         } catch (SQLException e) {
@@ -90,7 +97,9 @@ public class Datasource {
             if(queryAlbum != null) {
                 queryAlbum.close();
             }
-
+            if (conn != null) {
+                conn.close();
+            }
             if (conn != null) {
                 conn.close();
             }
@@ -213,5 +222,20 @@ public class Datasource {
                 throw new SQLException("Couldn't get _id for album");
             }
         }
+    }
+
+    public List<Album> queryAlbumsByArtist_ID(int artistId) throws SQLException{
+        queryAlbumsByArtistID.setInt(1, artistId);
+        ResultSet results = queryAlbumsByArtistID.executeQuery();
+
+        List<Album> albumList = new ArrayList<>();
+        while (results.next()) {
+            Album album = new Album();
+            album.setId(results.getInt(1));
+            album.setName(results.getString(2));
+            album.setArtistId(artistId);
+            albumList.add(album);
+        }
+        return albumList;
     }
 }

@@ -10,9 +10,9 @@
             xmlns:fx="http://javafx.com/fxml/1">
 
     <center>
-        <TableView fx:id="artistTable">
+        <TableView fx:id="tableView">
             <columns>
-                <TableColumn prefWidth="${artistTable.width}" text="Name">
+                <TableColumn prefWidth="${tableView.width}" text="Name">
                     <cellValueFactory>
                         <PropertyValueFactory property="name"/>
                     </cellValueFactory>
@@ -24,8 +24,8 @@
     <right>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="170.00" spacing="20.0" BorderPane.alignment="CENTER">
             <children>
-                <Button maxWidth="Infinity" mnemonicParsing="false" text="List Artists" />
-                <Button maxWidth="Infinity" mnemonicParsing="false" text="Show Albums (artist)" />
+                <Button onAction="#listArtists" maxWidth="Infinity" mnemonicParsing="false" text="List Artists" />
+                <Button onAction="#listAlbumsForArtist" maxWidth="Infinity" mnemonicParsing="false" text="Show Albums (artist)" />
                 <Button maxWidth="Infinity" mnemonicParsing="false" text="Update Artist" />
             </children>
             <BorderPane.margin>
