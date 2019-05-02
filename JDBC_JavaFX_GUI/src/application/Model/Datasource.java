@@ -1,5 +1,8 @@
 package application.Model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,9 @@ public class Datasource {
     // SELECT * FROM albums WHERE artist = ? ORDER BY name COLLATE NOCASE
     public static final String QUERY_ALBUMS_BY_ARTIST_ID = "SELECT * FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_ALBUM_ARTIST + " = ? ORDER BY " + COLUMN_ALBUM_NAME + " COLLATE NOCASE";
 
+    // UPDATE artists SET artist.name = ? WHERE artist._id = ?
+    public static final String UPDATE_ARTIST_NAME = "UPDATE " + TABLE_ARTISTS + " SET " + COLUMN_ARTIST_NAME + " = ? WHERE " + COLUMN_ARTIST_ID + " = ?";
+
     // == fields ==
 
     private Connection conn;
@@ -52,6 +58,7 @@ public class Datasource {
     private PreparedStatement queryAlbum;
 
     private PreparedStatement queryAlbumsByArtistID;
+    private PreparedStatement updateArtistName;
 
     // == private constructor ==
 
@@ -75,6 +82,7 @@ public class Datasource {
             queryArtist = conn.prepareStatement(QUERY_ARTIST);
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
             queryAlbumsByArtistID = conn.prepareStatement(QUERY_ALBUMS_BY_ARTIST_ID);
+            updateArtistName = conn.prepareStatement(UPDATE_ARTIST_NAME);
 
             return true;
         } catch (SQLException e) {
@@ -85,19 +93,22 @@ public class Datasource {
 
     public void close() {
         try {
-            if(insertIntoArtists != null) {
+            if (insertIntoArtists != null) {
                 insertIntoArtists.close();
             }
-            if(insertIntoAlbums != null) {
+            if (insertIntoAlbums != null) {
                 insertIntoAlbums.close();
             }
-            if(queryArtist != null) {
+            if (queryArtist != null) {
                 queryArtist.close();
             }
-            if(queryAlbum != null) {
+            if (queryAlbum != null) {
                 queryAlbum.close();
             }
-            if (conn != null) {
+            if (queryAlbumsByArtistID != null) {
+                conn.close();
+            }
+            if (updateArtistName != null) {
                 conn.close();
             }
             if (conn != null) {
@@ -179,19 +190,19 @@ public class Datasource {
 
         queryArtist.setString(1, name);
         ResultSet results = queryArtist.executeQuery();
-        if(results.next()) {
+        if (results.next()) {
             return results.getInt(1);
         } else {
             // Insert the artist
             insertIntoArtists.setString(1, name);
             int affectedRows = insertIntoArtists.executeUpdate();
 
-            if(affectedRows != 1) {
+            if (affectedRows != 1) {
                 throw new SQLException("Couldn't insert artist!");
             }
 
             ResultSet generatedKeys = insertIntoArtists.getGeneratedKeys();
-            if(generatedKeys.next()) {
+            if (generatedKeys.next()) {
                 return generatedKeys.getInt(1);
             } else {
                 throw new SQLException("Couldn't get _id for artist");
@@ -203,7 +214,7 @@ public class Datasource {
 
         queryAlbum.setString(1, name);
         ResultSet results = queryAlbum.executeQuery();
-        if(results.next()) {
+        if (results.next()) {
             return results.getInt(1);
         } else {
             // Insert the album
@@ -211,12 +222,12 @@ public class Datasource {
             insertIntoAlbums.setInt(2, artistId);
             int affectedRows = insertIntoAlbums.executeUpdate();
 
-            if(affectedRows != 1) {
+            if (affectedRows != 1) {
                 throw new SQLException("Couldn't insert album!");
             }
 
             ResultSet generatedKeys = insertIntoAlbums.getGeneratedKeys();
-            if(generatedKeys.next()) {
+            if (generatedKeys.next()) {
                 return generatedKeys.getInt(1);
             } else {
                 throw new SQLException("Couldn't get _id for album");
@@ -224,7 +235,7 @@ public class Datasource {
         }
     }
 
-    public List<Album> queryAlbumsByArtist_ID(int artistId) throws SQLException{
+    public List<Album> queryAlbumsByArtist_ID(int artistId) throws SQLException {
         queryAlbumsByArtistID.setInt(1, artistId);
         ResultSet results = queryAlbumsByArtistID.executeQuery();
 
@@ -237,5 +248,19 @@ public class Datasource {
             albumList.add(album);
         }
         return albumList;
+    }
+
+    public boolean updateArtistName(int id, String updatedName) {
+        try {
+            updateArtistName.setString(1, updatedName);
+            updateArtistName.setInt(2, id);
+            int affectedRows = updateArtistName.executeUpdate();
+
+            return affectedRows == 1;
+
+        } catch (SQLException e) {
+            System.out.println("Update failed" + e.getMessage());
+            return false;
+        }
     }
 }
