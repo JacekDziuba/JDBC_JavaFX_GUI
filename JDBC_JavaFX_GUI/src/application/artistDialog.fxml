@@ -1,0 +1,18 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.DialogController">
+
+    <headerText>
+        Add a new artist
+    </headerText>
+
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label text="Artist name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="artistNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+
+</DialogPane>

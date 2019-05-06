@@ -186,7 +186,7 @@ public class Datasource {
         }
     }
 
-    private int insertArtist(String name) throws SQLException {
+    public int insertArtist(String name) throws SQLException {
 
         queryArtist.setString(1, name);
         ResultSet results = queryArtist.executeQuery();
@@ -208,6 +208,23 @@ public class Datasource {
                 throw new SQLException("Couldn't get _id for artist");
             }
         }
+    }
+
+    public String insertNewArtist(Artist artist) throws SQLException {
+        queryArtist.setString(1, artist.getName());
+        ResultSet results = queryArtist.executeQuery();
+        if (results.next()) {
+            return "Couldn't load the artist";
+        } else {
+            // Insert the artist
+            insertIntoArtists.setString(1, artist.getName());
+            int affectedRows = insertIntoArtists.executeUpdate();
+
+            if (affectedRows != 1) {
+                throw new SQLException("Couldn't insert artist!");
+            }
+        }
+        return "New artist added";
     }
 
     private int insertAlbum(String name, int artistId) throws SQLException {
