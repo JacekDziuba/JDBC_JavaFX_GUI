@@ -13,7 +13,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -31,9 +30,8 @@ public class Controller {
     // == methods ==
 
     @FXML
-    public void listArtists() {
-        ObservableList<Artist> artists = FXCollections.observableArrayList(Datasource.getInstance().queryArtists(Datasource.ORDER_BY_ASC));
-        tableView.setItems(artists);
+    public void initialize() {
+        tableView.setItems(Datasource.getInstance().getArtists());
     }
 
     @FXML
@@ -70,10 +68,9 @@ public class Controller {
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 DialogController controller = fxmlLoader.getController();
                 Artist artist = controller.processResults();
+                tableView.getSelectionModel().select(artist);
 
                 Datasource.getInstance().insertNewArtist(artist);
-                listArtists();
-                tableView.getSelectionModel().select(artist);
             }
 
         } catch (IOException e) {

@@ -1,6 +1,7 @@
 package application;
 
 import application.Model.Artist;
+import application.Model.Datasource;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -17,9 +18,11 @@ public class DialogController {
 
     public Artist processResults() throws SQLException {
         String firstName = artistNameField.getText().trim();
-
         Artist artist = new Artist();
         artist.setName(firstName);
+
+        Datasource.getInstance().addArtist(artist);
+
         return artist;
     }
 }

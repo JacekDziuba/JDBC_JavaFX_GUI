@@ -12,11 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainWindow.fxml"));
-        Parent root = loader.load();
-        Controller controller = loader.getController();
-        controller.listArtists();
-
+        Parent root = FXMLLoader.load(getClass().getResource("mainWindow.fxml"));
         primaryStage.setTitle("Music Database");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
@@ -28,6 +24,7 @@ public class Main extends Application {
             System.out.println("FATAL ERROR: Couldn't connect to database");
             Platform.exit();
         }
+        Datasource.getInstance().queryArtists(Datasource.ORDER_BY_ASC);
     }
 
     @Override

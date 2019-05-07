@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updates and making the app. a bit easier.">
-      <change afterPath="$PROJECT_DIR$/src/application/DialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application/artistDialog.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Insert artist.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC_JavaFX_GUI/application/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC_JavaFX_GUI/application/mainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/DialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Model/Datasource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Model/Datasource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/mainWindow.fxml" afterDir="false" />
     </list>
@@ -71,8 +72,8 @@
         <entry file="file://$PROJECT_DIR$/src/application/mainWindow.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+            <state relative-caret-position="274">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -80,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="359">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,10 +93,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+            <state relative-caret-position="371">
+              <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#968#969#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,17 +107,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
+            <state relative-caret-position="409">
+              <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
               <folding>
-                <element signature="method#Datasource#0;class#Datasource#0" />
-                <element signature="method#open#0;class#Datasource#0" />
-                <element signature="method#close#0;class#Datasource#0" />
-                <element signature="method#queryArtists#0;class#Datasource#0" />
-                <element signature="method#queryAlbumsForArtist#0;class#Datasource#0" />
-                <element signature="method#insertAlbum#0;class#Datasource#0" />
-                <element signature="method#queryAlbumsByArtist_ID#0;class#Datasource#0" />
-                <element signature="method#updateArtistName#0;class#Datasource#0" />
+                <element signature="e#3223#3252#0" />
+                <element signature="e#3280#4059#0" />
+                <element signature="e#3316#3909#0" />
+                <element signature="e#3933#4053#0" />
+                <element signature="e#4065#4868#0" />
+                <element signature="e#4099#4747#0" />
+                <element signature="e#4144#4202#1" />
+                <element signature="e#4245#4302#1" />
+                <element signature="e#4340#4392#1" />
+                <element signature="e#4429#4480#1" />
+                <element signature="e#4528#4573#1" />
+                <element signature="e#4616#4661#1" />
+                <element signature="e#4692#4737#1" />
+                <element signature="e#4771#4862#0" />
+                <element signature="e#5982#6972#0" />
+                <element signature="e#6233#6446#1" />
+                <element signature="e#6331#6381#1" />
+                <element signature="e#6387#6436#1" />
+                <element signature="e#6644#6839#0" />
+                <element signature="e#6735#6800#1" />
+                <element signature="e#6863#6966#0" />
+                <element signature="e#6978#7773#0" />
+                <element signature="e#7162#7211#1" />
+                <element signature="e#7217#7767#1" />
+                <element signature="e#7404#7486#1" />
+                <element signature="e#7602#7665#1" />
+                <element signature="e#7671#7757#1" />
+                <element signature="e#8384#9235#0" />
+                <element signature="e#8580#8629#1" />
+                <element signature="e#8635#9229#1" />
+                <element signature="e#8869#8950#1" />
+                <element signature="e#9065#9128#1" />
+                <element signature="e#9134#9219#1" />
+                <element signature="e#9241#9769#0" />
+                <element signature="e#9519#9737#1" />
               </folding>
             </state>
           </provider>
@@ -123,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/DialogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,10 +180,10 @@
         <option value="$PROJECT_DIR$/src/sample/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/Application/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/application/Model/Album.java" />
-        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/Model/Artist.java" />
-        <option value="$PROJECT_DIR$/src/application/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/application/artistDialog.fxml" />
+        <option value="$PROJECT_DIR$/src/application/mainWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/DialogController.java" />
         <option value="$PROJECT_DIR$/src/application/Model/Datasource.java" />
         <option value="$PROJECT_DIR$/src/application/Controller.java" />
@@ -164,8 +194,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="6" />
     <option name="y" value="23" />
-    <option name="width" value="1334" />
-    <option name="height" value="597" />
+    <option name="width" value="1128" />
+    <option name="height" value="675" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -176,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -207,6 +236,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,17 +376,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556800402816</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Insert artist.">
+      <created>1557169149742</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557169149742</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="23" width="1334" height="597" extended-state="0" />
+    <frame x="6" y="23" width="1128" height="675" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16416791" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19414894" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -368,7 +405,7 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31368822" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3129139" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -379,8 +416,8 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32996634" />
-      <window_info anchor="bottom" id="Messages" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3283582" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32781458" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3269962" />
       <window_info anchor="bottom" id="Console" order="15" />
       <window_info anchor="bottom" id="DB Execution Console" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -401,7 +438,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Show albums for artists works." />
     <MESSAGE value="Updates and making the app. a bit easier." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates and making the app. a bit easier." />
+    <MESSAGE value="Insert artist." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert artist." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -428,12 +466,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Databases-Fix-Artist-and-Preload-Records-Source-code/src/sample/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Databases-Fix-Artist-and-Preload-Records-Source-code/src/sample/model/Datasource.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,28 +581,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/mainWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="359">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/mainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/DialogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -573,27 +611,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
+        <state relative-caret-position="409">
+          <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
           <folding>
-            <element signature="method#Datasource#0;class#Datasource#0" />
-            <element signature="method#open#0;class#Datasource#0" />
-            <element signature="method#close#0;class#Datasource#0" />
-            <element signature="method#queryArtists#0;class#Datasource#0" />
-            <element signature="method#queryAlbumsForArtist#0;class#Datasource#0" />
-            <element signature="method#insertAlbum#0;class#Datasource#0" />
-            <element signature="method#queryAlbumsByArtist_ID#0;class#Datasource#0" />
-            <element signature="method#updateArtistName#0;class#Datasource#0" />
+            <element signature="e#3223#3252#0" />
+            <element signature="e#3280#4059#0" />
+            <element signature="e#3316#3909#0" />
+            <element signature="e#3933#4053#0" />
+            <element signature="e#4065#4868#0" />
+            <element signature="e#4099#4747#0" />
+            <element signature="e#4144#4202#1" />
+            <element signature="e#4245#4302#1" />
+            <element signature="e#4340#4392#1" />
+            <element signature="e#4429#4480#1" />
+            <element signature="e#4528#4573#1" />
+            <element signature="e#4616#4661#1" />
+            <element signature="e#4692#4737#1" />
+            <element signature="e#4771#4862#0" />
+            <element signature="e#5982#6972#0" />
+            <element signature="e#6233#6446#1" />
+            <element signature="e#6331#6381#1" />
+            <element signature="e#6387#6436#1" />
+            <element signature="e#6644#6839#0" />
+            <element signature="e#6735#6800#1" />
+            <element signature="e#6863#6966#0" />
+            <element signature="e#6978#7773#0" />
+            <element signature="e#7162#7211#1" />
+            <element signature="e#7217#7767#1" />
+            <element signature="e#7404#7486#1" />
+            <element signature="e#7602#7665#1" />
+            <element signature="e#7671#7757#1" />
+            <element signature="e#8384#9235#0" />
+            <element signature="e#8580#8629#1" />
+            <element signature="e#8635#9229#1" />
+            <element signature="e#8869#8950#1" />
+            <element signature="e#9065#9128#1" />
+            <element signature="e#9134#9219#1" />
+            <element signature="e#9241#9769#0" />
+            <element signature="e#9519#9737#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        <state relative-caret-position="371">
+          <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -60,6 +60,8 @@ public class Datasource {
     private PreparedStatement queryAlbumsByArtistID;
     private PreparedStatement updateArtistName;
 
+    private ObservableList<Artist> artistObservableList = FXCollections.observableArrayList();
+
     // == private constructor ==
 
     public static Datasource instance = new Datasource();
@@ -70,6 +72,12 @@ public class Datasource {
 
     private Datasource() {
 
+    }
+
+    // == getter ==
+
+    public ObservableList<Artist> getArtists() {
+        return artistObservableList;
     }
 
     // == methods ==
@@ -119,7 +127,7 @@ public class Datasource {
         }
     }
 
-    public List<Artist> queryArtists(int sortOrder) {
+    public void queryArtists(int sortOrder) {
 
         StringBuilder sb = new StringBuilder("SELECT * FROM ");
         sb.append(TABLE_ARTISTS);
@@ -137,19 +145,15 @@ public class Datasource {
         try (Statement statement = conn.createStatement();
              ResultSet results = statement.executeQuery(sb.toString())) {
 
-            List<Artist> artists = new ArrayList<>();
             while (results.next()) {
                 Artist artist = new Artist();
                 artist.setId(results.getInt(INDEX_ARTIST_ID));
                 artist.setName(results.getString(INDEX_ARTIST_NAME));
-                artists.add(artist);
+                artistObservableList.add(artist);
             }
-
-            return artists;
 
         } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
-            return null;
         }
     }
 
@@ -210,11 +214,11 @@ public class Datasource {
         }
     }
 
-    public String insertNewArtist(Artist artist) throws SQLException {
+    public void insertNewArtist(Artist artist) throws SQLException {
         queryArtist.setString(1, artist.getName());
         ResultSet results = queryArtist.executeQuery();
         if (results.next()) {
-            return "Couldn't load the artist";
+            throw new SQLException("Couldn't load the artist");
         } else {
             // Insert the artist
             insertIntoArtists.setString(1, artist.getName());
@@ -224,7 +228,7 @@ public class Datasource {
                 throw new SQLException("Couldn't insert artist!");
             }
         }
-        return "New artist added";
+        System.out.println("New artist added");
     }
 
     private int insertAlbum(String name, int artistId) throws SQLException {
@@ -267,17 +271,9 @@ public class Datasource {
         return albumList;
     }
 
-    public boolean updateArtistName(int id, String updatedName) {
-        try {
-            updateArtistName.setString(1, updatedName);
-            updateArtistName.setInt(2, id);
-            int affectedRows = updateArtistName.executeUpdate();
-
-            return affectedRows == 1;
-
-        } catch (SQLException e) {
-            System.out.println("Update failed" + e.getMessage());
-            return false;
-        }
+    public void addArtist(Artist item) {
+        artistObservableList.add(item);
     }
+
+    public void deleteArtist(Artist item) { artistObservableList.remove(item); }
 }
