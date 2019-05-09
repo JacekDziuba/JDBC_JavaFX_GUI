@@ -2,6 +2,7 @@ package application.Model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -157,64 +158,7 @@ public class Datasource {
         }
     }
 
-    public List<String> queryAlbumsForArtist(String artistName, int sortOrder) {
-
-        StringBuilder sb = new StringBuilder(QUERY_ALBUMS_BY_ARTIST_START);
-        sb.append(artistName);
-        sb.append("\"");
-
-        if (sortOrder != ORDER_BY_NONE) {
-            sb.append(QUERY_ALBUMS_BY_ARTIST_SORT);
-            if (sortOrder == ORDER_BY_DESC) {
-                sb.append("DESC");
-            } else {
-                sb.append("ASC");
-            }
-        }
-
-        System.out.println("SQL statement = " + sb.toString());
-
-        try (Statement statement = conn.createStatement();
-             ResultSet results = statement.executeQuery(sb.toString())) {
-
-            List<String> albums = new ArrayList<>();
-            while (results.next()) {
-                albums.add(results.getString(1));
-            }
-
-            return albums;
-
-        } catch (SQLException e) {
-            System.out.println("Query failed: " + e.getMessage());
-            return null;
-        }
-    }
-
-    public int insertArtist(String name) throws SQLException {
-
-        queryArtist.setString(1, name);
-        ResultSet results = queryArtist.executeQuery();
-        if (results.next()) {
-            return results.getInt(1);
-        } else {
-            // Insert the artist
-            insertIntoArtists.setString(1, name);
-            int affectedRows = insertIntoArtists.executeUpdate();
-
-            if (affectedRows != 1) {
-                throw new SQLException("Couldn't insert artist!");
-            }
-
-            ResultSet generatedKeys = insertIntoArtists.getGeneratedKeys();
-            if (generatedKeys.next()) {
-                return generatedKeys.getInt(1);
-            } else {
-                throw new SQLException("Couldn't get _id for artist");
-            }
-        }
-    }
-
-    public void insertNewArtist(Artist artist) throws SQLException {
+    public void insertNewArtist(@NotNull Artist artist) throws SQLException {
         queryArtist.setString(1, artist.getName());
         ResultSet results = queryArtist.executeQuery();
         if (results.next()) {
@@ -276,4 +220,14 @@ public class Datasource {
     }
 
     public void deleteArtist(Artist item) { artistObservableList.remove(item); }
+
+    public void updateArtistName(Artist artist) throws SQLException{
+        updateArtistName.setString(1, artist.getName());
+        updateArtistName.setInt(2, artist.getId());
+        int affectedRows = updateArtistName.executeUpdate();
+        if (affectedRows != 1) {
+            throw new SQLException("Couldn't update artist!");
+        }
+    }
+
 }

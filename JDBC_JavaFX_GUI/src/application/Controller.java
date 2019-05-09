@@ -83,4 +83,41 @@ public class Controller {
             return;
         }
     }
+
+    @FXML
+    public void editArtistDialog() {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainBorderPane.getScene().getWindow());
+        dialog.setTitle("Edit Artist");
+        dialog.setHeaderText("Use this dialog to edit Artist");
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+
+        try {
+            fxmlLoader.setLocation(getClass().getResource("artistDialog.fxml"));
+
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+            DialogController editController = fxmlLoader.getController();
+            Artist artist = (Artist) tableView.getSelectionModel().getSelectedItem();
+            editController.editArtist(artist);
+
+            Optional<ButtonType> result = dialog.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                editController.updateArtist(artist);
+                tableView.getSelectionModel().select(artist);
+                Datasource.getInstance().updateArtistName(artist);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Couldn't load the dialog");
+            e.printStackTrace();
+            return;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

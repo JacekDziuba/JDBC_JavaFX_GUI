@@ -25,4 +25,14 @@ public class DialogController {
 
         return artist;
     }
+
+    public void editArtist(Artist artist) {
+        artistNameField.setText(artist.getName());
+    }
+
+    public void updateArtist(Artist artist) {
+        artist.setName(artistNameField.getText());
+
+    }
+
 }
