@@ -48,6 +48,9 @@ public class Datasource {
     // UPDATE artists SET artist.name = ? WHERE artist._id = ?
     public static final String UPDATE_ARTIST_NAME = "UPDATE " + TABLE_ARTISTS + " SET " + COLUMN_ARTIST_NAME + " = ? WHERE " + COLUMN_ARTIST_ID + " = ?";
 
+    // DELETE FROM artists WHERE _id = ?
+    public static final String DELETE_ARTIST = "DELETE FROM " + TABLE_ARTISTS + " WHERE " + COLUMN_ARTIST_ID + " = ?";
+
     // == fields ==
 
     private Connection conn;
@@ -60,6 +63,7 @@ public class Datasource {
 
     private PreparedStatement queryAlbumsByArtistID;
     private PreparedStatement updateArtistName;
+    private PreparedStatement deleteArtist;
 
     private ObservableList<Artist> artistObservableList = FXCollections.observableArrayList();
 
@@ -92,6 +96,7 @@ public class Datasource {
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
             queryAlbumsByArtistID = conn.prepareStatement(QUERY_ALBUMS_BY_ARTIST_ID);
             updateArtistName = conn.prepareStatement(UPDATE_ARTIST_NAME);
+            deleteArtist = conn.prepareStatement(DELETE_ARTIST);
 
             return true;
         } catch (SQLException e) {
@@ -115,10 +120,13 @@ public class Datasource {
                 queryAlbum.close();
             }
             if (queryAlbumsByArtistID != null) {
-                conn.close();
+                queryAlbumsByArtistID.close();
             }
             if (updateArtistName != null) {
-                conn.close();
+                updateArtistName.close();
+            }
+            if (deleteArtist != null) {
+                deleteArtist.close();
             }
             if (conn != null) {
                 conn.close();
@@ -230,4 +238,13 @@ public class Datasource {
         }
     }
 
+    public void deleteArtistFromDB(int artistId) throws SQLException{
+        deleteArtist.setInt(1, artistId);
+        int affectedRows = deleteArtist.executeUpdate();
+
+        if (affectedRows != 1) {
+            throw  new SQLException("Couldn't delete the artist");
+        }
+        System.out.println("Artist deleted");
+    }
 }

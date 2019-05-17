@@ -68,9 +68,8 @@ public class Controller {
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 DialogController controller = fxmlLoader.getController();
                 Artist artist = controller.processResults();
+                Datasource.getInstance().addArtist(artist);
                 tableView.getSelectionModel().select(artist);
-
-                Datasource.getInstance().insertNewArtist(artist);
             }
 
         } catch (IOException e) {
@@ -119,5 +118,28 @@ public class Controller {
             e.printStackTrace();
         }
 
+    }
+
+    @FXML
+    public void deleteArtist() throws SQLException{
+        Artist artist = (Artist) tableView.getSelectionModel().getSelectedItem();
+        if (artist == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No artist selected");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select artist to be deleted");
+            alert.showAndWait();
+            return;
+        }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete artist");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to delete " + artist.getName() + " ?");
+
+        Optional<ButtonType> results = alert.showAndWait();
+        if (results.isPresent() && results.get() == ButtonType.OK) {
+            Datasource.getInstance().deleteArtistFromDB(artist.getId());
+            Datasource.getInstance().deleteArtist(artist);
+        }
     }
 }

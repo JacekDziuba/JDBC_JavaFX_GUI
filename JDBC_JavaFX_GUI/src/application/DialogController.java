@@ -21,7 +21,7 @@ public class DialogController {
         Artist artist = new Artist();
         artist.setName(firstName);
 
-        Datasource.getInstance().addArtist(artist);
+        Datasource.getInstance().insertNewArtist(artist);
 
         return artist;
     }
