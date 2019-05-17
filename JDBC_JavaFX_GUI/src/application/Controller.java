@@ -3,6 +3,7 @@ package application;
 import application.Model.Album;
 import application.Model.Artist;
 import application.Model.Datasource;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -106,8 +107,7 @@ public class Controller {
             Optional<ButtonType> result = dialog.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 editController.updateArtist(artist);
-                tableView.getSelectionModel().select(artist);
-                Datasource.getInstance().updateArtistName(artist);
+
             }
 
         } catch (IOException e) {
@@ -117,7 +117,6 @@ public class Controller {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
@@ -141,5 +140,10 @@ public class Controller {
             Datasource.getInstance().deleteArtistFromDB(artist.getId());
             Datasource.getInstance().deleteArtist(artist);
         }
+    }
+
+    @FXML
+    public void handleExit() {
+        Platform.exit();
     }
 }

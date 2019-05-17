@@ -227,8 +227,6 @@ public class Datasource {
         artistObservableList.add(item);
     }
 
-    public void deleteArtist(Artist item) { artistObservableList.remove(item); }
-
     public void updateArtistName(Artist artist) throws SQLException{
         updateArtistName.setString(1, artist.getName());
         updateArtistName.setInt(2, artist.getId());
@@ -237,6 +235,8 @@ public class Datasource {
             throw new SQLException("Couldn't update artist!");
         }
     }
+
+    public void deleteArtist(Artist item) { artistObservableList.remove(item); }
 
     public void deleteArtistFromDB(int artistId) throws SQLException{
         deleteArtist.setInt(1, artistId);

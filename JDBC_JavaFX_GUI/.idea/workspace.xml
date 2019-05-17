@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Update Artist.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Delete Artist.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC_JavaFX_GUI/application/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC_JavaFX_GUI/application/mainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/DialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Model/Datasource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Model/Datasource.java" afterDir="false" />
@@ -66,12 +67,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/mainWindow.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="31" column="116" lean-forward="true" selection-start-line="31" selection-start-column="116" selection-end-line="31" selection-end-column="116" />
+            <state relative-caret-position="259">
+              <caret line="32" column="101" selection-start-line="32" selection-start-column="101" selection-end-line="32" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -79,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="258">
+              <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,59 +89,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="404">
+              <caret line="148" column="1" lean-forward="true" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="1" />
               <folding>
                 <element signature="method#listAlbumsForArtist#0;class#Controller#0" />
                 <element signature="e#1004#1246#1" />
-                <element signature="e#2673#2792#0" />
-                <element signature="method#editArtistDialog#0;class#Controller#0" />
-                <element signature="e#3132#3980#0" />
-                <element signature="e#3772#3969#1" />
-                <element signature="e#4003#4127#0" />
-                <element signature="e#4151#4195#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="247" column="42" selection-start-line="247" selection-start-column="42" selection-end-line="247" selection-end-column="42" />
-              <folding>
-                <element signature="sql_statement#0#35" />
-                <element signature="sql_statement#0#45" />
-                <element signature="sql_statement#0#38" />
-                <element signature="sql_statement#0#37" />
-                <element signature="sql_statement#0#51" />
-                <element signature="sql_statement#0#41" />
-                <element signature="e#3361#3390#0" />
-                <element signature="e#4185#4305#0" />
-                <element signature="e#5023#5114#0" />
-                <element signature="e#5126#6125#0" />
-                <element signature="e#5307#5591#1" />
-                <element signature="e#5476#5526#1" />
-                <element signature="e#5532#5581#1" />
-                <element signature="e#5724#6017#0" />
-                <element signature="e#5762#6006#1" />
-                <element signature="e#6041#6119#0" />
-                <element signature="e#6773#7624#0" />
-                <element signature="e#6969#7018#1" />
-                <element signature="e#7024#7618#1" />
-                <element signature="e#7258#7339#1" />
-                <element signature="e#7454#7517#1" />
-                <element signature="e#7523#7608#1" />
-                <element signature="e#7630#8158#0" />
-                <element signature="e#7908#8126#1" />
-                <element signature="e#8513#8560#1" />
-                <element signature="e#8636#8637#0" expanded="true" />
-                <element signature="e#8334#8680#0" />
-                <element signature="e#8600#8674#1" />
+                <element signature="e#2523#2642#0" />
+                <element signature="e#2666#2785#0" />
+                <element signature="e#4369#4660#1" />
+                <element signature="e#5182#5183#0" expanded="true" />
+                <element signature="e#5213#5214#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,12 +110,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/DialogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="341">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#631#632#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="138" column="44" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
+              <folding>
+                <element signature="sql_statement#0#35" />
+                <element signature="sql_statement#0#45" />
+                <element signature="sql_statement#0#38" />
+                <element signature="sql_statement#0#37" />
+                <element signature="sql_statement#0#51" />
+                <element signature="sql_statement#0#41" />
+                <element signature="sql_statement#0#33" />
+                <element signature="e#3566#3595#0" />
+                <element signature="e#3737#4581#0" />
+                <element signature="e#3773#4431#0" />
+                <element signature="e#4455#4575#0" />
+                <element signature="e#4587#5511#0" />
+                <element signature="e#4621#5390#0" />
+                <element signature="e#4666#4724#1" />
+                <element signature="e#4767#4824#1" />
+                <element signature="e#4862#4914#1" />
+                <element signature="e#4951#5002#1" />
+                <element signature="e#5050#5112#1" />
+                <element signature="e#5155#5212#1" />
+                <element signature="e#5251#5304#1" />
+                <element signature="e#5335#5380#1" />
+                <element signature="e#5414#5505#0" />
+                <element signature="e#5517#6516#0" />
+                <element signature="e#5698#5982#1" />
+                <element signature="e#5867#5917#1" />
+                <element signature="e#5923#5972#1" />
+                <element signature="e#6115#6408#0" />
+                <element signature="e#6153#6397#1" />
+                <element signature="e#6432#6510#0" />
+                <element signature="e#6522#7158#0" />
+                <element signature="e#6732#6807#1" />
+                <element signature="e#6813#7104#1" />
+                <element signature="e#7012#7094#1" />
+                <element signature="e#7164#8015#0" />
+                <element signature="e#7360#7409#1" />
+                <element signature="e#7415#8009#1" />
+                <element signature="e#7649#7730#1" />
+                <element signature="e#7845#7908#1" />
+                <element signature="e#7914#7999#1" />
+                <element signature="e#8021#8549#0" />
+                <element signature="e#8299#8517#1" />
               </folding>
             </state>
           </provider>
@@ -183,8 +194,8 @@
         <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/DialogController.java" />
         <option value="$PROJECT_DIR$/src/application/Model/Datasource.java" />
-        <option value="$PROJECT_DIR$/src/application/Controller.java" />
         <option value="$PROJECT_DIR$/src/application/mainWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/application/Controller.java" />
       </list>
     </option>
   </component>
@@ -192,8 +203,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="25" />
     <option name="y" value="23" />
-    <option name="width" value="1257" />
-    <option name="height" value="680" />
+    <option name="width" value="1252" />
+    <option name="height" value="615" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -204,7 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -235,6 +245,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,17 +410,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557426626697</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Delete Artist.">
+      <created>1558118415262</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558118415262</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="23" width="1257" height="680" extended-state="0" />
+    <frame x="25" y="23" width="1252" height="615" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17422435" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17492013" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -421,7 +439,7 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31198686" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31066176" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,7 +451,7 @@
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32996634" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32781458" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3256579" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32512316" />
       <window_info anchor="bottom" id="Console" order="15" />
       <window_info anchor="bottom" id="DB Execution Console" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -457,7 +475,8 @@
     <MESSAGE value="Insert artist." />
     <MESSAGE value="Fixes. Data binding added." />
     <MESSAGE value="Update Artist." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Artist." />
+    <MESSAGE value="Delete Artist." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete Artist." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -592,16 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/Model/Artist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -611,66 +620,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/DialogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="341">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="247" column="42" selection-start-line="247" selection-start-column="42" selection-end-line="247" selection-end-column="42" />
-          <folding>
-            <element signature="sql_statement#0#35" />
-            <element signature="sql_statement#0#45" />
-            <element signature="sql_statement#0#38" />
-            <element signature="sql_statement#0#37" />
-            <element signature="sql_statement#0#51" />
-            <element signature="sql_statement#0#41" />
-            <element signature="e#3361#3390#0" />
-            <element signature="e#4185#4305#0" />
-            <element signature="e#5023#5114#0" />
-            <element signature="e#5126#6125#0" />
-            <element signature="e#5307#5591#1" />
-            <element signature="e#5476#5526#1" />
-            <element signature="e#5532#5581#1" />
-            <element signature="e#5724#6017#0" />
-            <element signature="e#5762#6006#1" />
-            <element signature="e#6041#6119#0" />
-            <element signature="e#6773#7624#0" />
-            <element signature="e#6969#7018#1" />
-            <element signature="e#7024#7618#1" />
-            <element signature="e#7258#7339#1" />
-            <element signature="e#7454#7517#1" />
-            <element signature="e#7523#7608#1" />
-            <element signature="e#7630#8158#0" />
-            <element signature="e#7908#8126#1" />
-            <element signature="e#8513#8560#1" />
-            <element signature="e#8636#8637#0" expanded="true" />
-            <element signature="e#8334#8680#0" />
-            <element signature="e#8600#8674#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
-          <folding>
-            <element signature="method#listAlbumsForArtist#0;class#Controller#0" />
-            <element signature="e#1004#1246#1" />
-            <element signature="e#2673#2792#0" />
-            <element signature="method#editArtistDialog#0;class#Controller#0" />
-            <element signature="e#3132#3980#0" />
-            <element signature="e#3772#3969#1" />
-            <element signature="e#4003#4127#0" />
-            <element signature="e#4151#4195#0" />
           </folding>
         </state>
       </provider>
@@ -678,8 +631,84 @@
     <entry file="file://$PROJECT_DIR$/src/application/mainWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="31" column="116" lean-forward="true" selection-start-line="31" selection-start-column="116" selection-end-line="31" selection-end-column="116" />
+        <state relative-caret-position="259">
+          <caret line="32" column="101" selection-start-line="32" selection-start-column="101" selection-end-line="32" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Model/Datasource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="138" column="44" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
+          <folding>
+            <element signature="sql_statement#0#35" />
+            <element signature="sql_statement#0#45" />
+            <element signature="sql_statement#0#38" />
+            <element signature="sql_statement#0#37" />
+            <element signature="sql_statement#0#51" />
+            <element signature="sql_statement#0#41" />
+            <element signature="sql_statement#0#33" />
+            <element signature="e#3566#3595#0" />
+            <element signature="e#3737#4581#0" />
+            <element signature="e#3773#4431#0" />
+            <element signature="e#4455#4575#0" />
+            <element signature="e#4587#5511#0" />
+            <element signature="e#4621#5390#0" />
+            <element signature="e#4666#4724#1" />
+            <element signature="e#4767#4824#1" />
+            <element signature="e#4862#4914#1" />
+            <element signature="e#4951#5002#1" />
+            <element signature="e#5050#5112#1" />
+            <element signature="e#5155#5212#1" />
+            <element signature="e#5251#5304#1" />
+            <element signature="e#5335#5380#1" />
+            <element signature="e#5414#5505#0" />
+            <element signature="e#5517#6516#0" />
+            <element signature="e#5698#5982#1" />
+            <element signature="e#5867#5917#1" />
+            <element signature="e#5923#5972#1" />
+            <element signature="e#6115#6408#0" />
+            <element signature="e#6153#6397#1" />
+            <element signature="e#6432#6510#0" />
+            <element signature="e#6522#7158#0" />
+            <element signature="e#6732#6807#1" />
+            <element signature="e#6813#7104#1" />
+            <element signature="e#7012#7094#1" />
+            <element signature="e#7164#8015#0" />
+            <element signature="e#7360#7409#1" />
+            <element signature="e#7415#8009#1" />
+            <element signature="e#7649#7730#1" />
+            <element signature="e#7845#7908#1" />
+            <element signature="e#7914#7999#1" />
+            <element signature="e#8021#8549#0" />
+            <element signature="e#8299#8517#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="148" column="1" lean-forward="true" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="1" />
+          <folding>
+            <element signature="method#listAlbumsForArtist#0;class#Controller#0" />
+            <element signature="e#1004#1246#1" />
+            <element signature="e#2523#2642#0" />
+            <element signature="e#2666#2785#0" />
+            <element signature="e#4369#4660#1" />
+            <element signature="e#5182#5183#0" expanded="true" />
+            <element signature="e#5213#5214#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

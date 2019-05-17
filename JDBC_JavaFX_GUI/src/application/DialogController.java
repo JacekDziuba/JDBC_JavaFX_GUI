@@ -20,9 +20,7 @@ public class DialogController {
         String firstName = artistNameField.getText().trim();
         Artist artist = new Artist();
         artist.setName(firstName);
-
         Datasource.getInstance().insertNewArtist(artist);
-
         return artist;
     }
 
@@ -30,9 +28,9 @@ public class DialogController {
         artistNameField.setText(artist.getName());
     }
 
-    public void updateArtist(Artist artist) {
+    public void updateArtist(Artist artist) throws SQLException{
         artist.setName(artistNameField.getText());
-
+        Datasource.getInstance().updateArtistName(artist);
     }
 
 }
