@@ -65,7 +65,7 @@ public class Datasource {
     private PreparedStatement updateArtistName;
     private PreparedStatement deleteArtist;
 
-    private ObservableList<Artist> artistObservableList = FXCollections.observableArrayList();
+    private ObservableList<Artist> artistObservableList;
 
     // == private constructor ==
 
@@ -137,7 +137,7 @@ public class Datasource {
     }
 
     public void queryArtists(int sortOrder) {
-
+        artistObservableList = FXCollections.observableArrayList();
         StringBuilder sb = new StringBuilder("SELECT * FROM ");
         sb.append(TABLE_ARTISTS);
         if (sortOrder != ORDER_BY_NONE) {
